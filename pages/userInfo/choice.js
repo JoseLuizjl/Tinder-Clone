@@ -27,23 +27,23 @@ function Choice({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-        <Text style={styles.userText}>Eu sou</Text>
+        <Text style={styles.userText}>I am</Text>
   
       <View style={styles.buttonChoiceContainer}>
         <TouchableOpacity
-          style={[styles.button1, selectedOption === 'mulher' && styles.selectedButton]}
-          onPress={() => handleOptionPress('mulher')}
+          style={[styles.button1, selectedOption === 'woman' && styles.selectedButton]}
+          onPress={() => handleOptionPress('woman')}
         >
-          <Text style={[styles.textBtn, selectedOption === 'mulher' && styles.selectedButtonText]}>Mulher</Text>
+          <Text style={[styles.textBtn, selectedOption === 'woman' && styles.selectedButtonText]}>Woman</Text>
         </TouchableOpacity>
       </View>
 
       <View style={[styles.buttonChoiceContainer, { top: 300 }]}>
         <TouchableOpacity
-          style={[styles.button2, selectedOption === 'homem' && styles.selectedButton]}
-          onPress={() => handleOptionPress('homem')}
+          style={[styles.button2, selectedOption === 'man' && styles.selectedButton]}
+          onPress={() => handleOptionPress('man')}
         >
-          <Text style={[styles.textBtn, selectedOption === 'homem' && styles.selectedButtonText]}>Homem</Text>
+          <Text style={[styles.textBtn, selectedOption === 'man' && styles.selectedButtonText]}>Man</Text>
         </TouchableOpacity>
       </View>
 
@@ -54,7 +54,7 @@ function Choice({ navigation, route }) {
     >
       {isChecked && <Ionicons name="md-checkmark" size={15} color="#008000" />}
     </TouchableOpacity>
-        <Text style={styles.infoText}>Mostrar meu gênero no meu perfil</Text> 
+        <Text style={styles.infoText}>Show my gender on my profile</Text> 
       </View>
 
       <View style={styles.buttonContainer}>
@@ -85,7 +85,6 @@ function Choice({ navigation, route }) {
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -175,6 +174,9 @@ const styles = StyleSheet.create({
     marginRight: 3,
   },
   checked: {
+    borderColor: '#000', 
+  },
+  unchecked: {
     borderColor: '#000', 
   },
 });

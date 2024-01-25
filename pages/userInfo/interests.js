@@ -34,25 +34,22 @@ function Interests({ navigation, route }) {
     return null;
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.userText}>Meus{'\n'}interesses é</Text>
+      <Text style={styles.userText}>My{'\n'}interests are</Text>
 
       <View  style={styles.skipContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('userPhoto')}>
-          <Text style={styles.skipText}>Pular</Text>
+          <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
 
+      <View style={styles.infoContainer}>
+        <Text style={styles.infoText}>Let everyone know what you're interested in by adding it to your profile.</Text> 
+      </View>
 
-        <View style={styles.infoContainer}>
-            <Text style={styles.infoText}>Deixe todos saberem no que você está interessado adicionando-o ao seu perfil.</Text> 
-        </View>
-
-        
       <View style={styles.interestButtonsContainer}>
-        {['Harry Potter', 'Spa', 'Hot Yoga', 'Spotify', 'Basquete', 'Futebol', 'SoundCloud', 'Viagens', 'Instagram', 'Sauna', '90s Kid', 'Rock', 'Pop', 'Correr', 'Escalar', 'Academia', 'Caminhar', 'Poesia', 'Cinema', 'Sushi', 'Meditação', 'Livros'].map((interest) => (
+        {['Harry Potter', 'Spa', 'Hot Yoga', 'Spotify', 'Basketball', 'Soccer', 'SoundCloud', 'Travel', 'Instagram', 'Sauna', '90s Kid', 'Rock', 'Pop', 'Running', 'Climbing', 'Gym', 'Walking', 'Poetry', 'Movies', 'Sushi', 'Meditation', 'Books'].map((interest) => (
           <TouchableOpacity
             key={interest}
             style={[
@@ -73,29 +70,28 @@ function Interests({ navigation, route }) {
         ))}
       </View>
 
-
       <View style={styles.buttonContainer}>
-  <TouchableOpacity
-    style={styles.continueButton}
-    onPress={() => {
-      if (isContinueClickable) {
-        navigation.navigate('userPhoto');
-      }
-    }}
-    disabled={!isContinueClickable}
-  >
-    <LinearGradient
-      colors={isContinueClickable ? ['#E73D76', '#FF3235'] : ['#e8e8e8', '#e8e8e8']}
-      style={styles.continueButtonGradient}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-    >
-      <Text style={[styles.continueButtonText, isContinueClickable ? styles.clickableText : null]}>
-        CONTINUE {selectedInterests.length}/{maxInterests}
-      </Text>
-    </LinearGradient>
-  </TouchableOpacity>
-</View>
+        <TouchableOpacity
+          style={styles.continueButton}
+          onPress={() => {
+            if (isContinueClickable) {
+              navigation.navigate('userPhoto');
+            }
+          }}
+          disabled={!isContinueClickable}
+        >
+          <LinearGradient
+            colors={isContinueClickable ? ['#E73D76', '#FF3235'] : ['#e8e8e8', '#e8e8e8']}
+            style={styles.continueButtonGradient}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <Text style={[styles.continueButtonText, isContinueClickable ? styles.clickableText : null]}>
+              CONTINUE {selectedInterests.length}/{maxInterests}
+            </Text>
+          </LinearGradient>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }

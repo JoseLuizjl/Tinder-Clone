@@ -109,7 +109,7 @@ function PhoneNumber({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
 
-      <Text style={styles.myPhoneNumber}>Meu número é</Text>
+      <Text style={styles.myPhoneNumber}>My phone number is</Text>
 
       <View style={styles.changeCountry}>
         <View style={styles.pickerPosition}>
@@ -130,22 +130,20 @@ function PhoneNumber({ navigation }) {
           </TouchableOpacity>
           {renderAreasCodesModal()}
         </View>
-
-
       </View>
-      
+
       <View style={styles.numberInputBorder}>
-          <TextInput style={styles.numberInput}
-            placeholder="Número de telefone"
-            placeholderTextColor="#4c4e53"
-            keyboardType="numeric"
-            value={text}
-            onChangeText={handleChangeText}
-          />
-        </View>
+        <TextInput style={styles.numberInput}
+          placeholder="Phone number"
+          placeholderTextColor="#4c4e53"
+          keyboardType="numeric"
+          value={text}
+          onChangeText={handleChangeText}
+        />
+      </View>
 
       <View style={styles.textContainer}>
-        <Text style={styles.infoText}>Quando você tocar em Continuar, o Tinder lhe enviará uma mensagem de texto com o código de verificação. Tarifas de mensagens e dados podem ser aplicáveis. O número de telefone confirmado pode ser utilizado para entrar no Tinder. <Text style={styles.linkText}>Saiba o que acontece se o seu número mudar.</Text></Text>
+        <Text style={styles.infoText}>When you tap Continue, Tinder will send you a text message with the verification code. Message and data rates may apply. The confirmed phone number can be used to sign in to Tinder. <Text style={styles.linkText}>Learn what happens if your number changes.</Text></Text>
       </View>
 
       <View style={styles.btnCont}>
@@ -168,14 +166,12 @@ function PhoneNumber({ navigation }) {
           >
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               <Text style={[styles.buttonText, { color: isButtonClick ? '#fff' : '#505050' }]}>
-                Continuar
+                Continue
               </Text>
             </View>
           </LinearGradient>
         </TouchableOpacity>
       </View>
-
-
     </SafeAreaView>
   );
 }

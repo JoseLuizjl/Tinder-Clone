@@ -1,30 +1,29 @@
 import React, { useEffect, useState, useRef } from "react";
 import { 
-TouchableOpacity,
-View,
-Text,
-StyleSheet,
-SafeAreaView,
-TextInput } from "react-native";
+  TouchableOpacity,
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TextInput 
+} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 
 function ConfirmNumber({navigation, route}) {
 
-const [loaded] = useFonts({
+  const [loaded] = useFonts({
     GothamRoundedBook: require('../../assets/fonts/GothamRounded-Book.otf'),
   });
-  
-const [inputs, setInputs] = useState(['', '', '', '', '', '']);
-const inputRefs = useRef([]);
- const areAllInputsFilled = () => inputs.every(value => value !== '');
 
+  const [inputs, setInputs] = useState(['', '', '', '', '', '']);
+  const inputRefs = useRef([]);
+  const areAllInputsFilled = () => inputs.every(value => value !== '');
 
   if (!loaded) {
     return null;
   }
-
 
   const handleChange = (text, index) => {
     const newInputs = [...inputs];
@@ -47,68 +46,61 @@ const inputRefs = useRef([]);
 
   return (
     <SafeAreaView style={styles.container}>
-     
-     <View style={styles.mainText}>
-     <Text style={styles.text}>Meu código é</Text>
-     
-     </View>
+      <View style={styles.mainText}>
+        <Text style={styles.text}>My code is</Text>
+      </View>
 
-     <View style={styles.middleContainer}>
+      <View style={styles.middleContainer}>
         <Text style={styles.number}>{phoneNumber}</Text>
 
-
-
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('phoneNumber')}> 
-            <Text style={styles.buttonText}>ENVIAR DE NOVO</Text>
+          <Text style={styles.buttonText}>SEND AGAIN</Text>
         </TouchableOpacity>
-    </View>
+      </View>
 
-    <View style={styles.inputContainer}>
-      {inputs.map((value, index) => (
-        <TextInput
-          key={index}
-          style={styles.input}
-          value={value}
-          onChangeText={(text) => handleChange(text, index)}
-          maxLength={1}
-          keyboardType="numeric"
-          ref={(input) => {
-            inputRefs.current[index] = input;
-          }}
-        />
-      ))}
-    </View>
+      <View style={styles.inputContainer}>
+        {inputs.map((value, index) => (
+          <TextInput
+            key={index}
+            style={styles.input}
+            value={value}
+            onChangeText={(text) => handleChange(text, index)}
+            maxLength={1}
+            keyboardType="numeric"
+            ref={(input) => {
+              inputRefs.current[index] = input;
+            }}
+          />
+        ))}
+      </View>
 
-
-       <View style={styles.buttonContainer}>
-  <LinearGradient
-    colors={areAllInputsFilled() ?  ['#E73D76', '#FF3235'] : ['#d5d5d5', '#d5d5d5']}
-    start={{ x: 0, y: 0 }}
-    end={{ x: 1, y: 0 }}
-    style={[styles.gradientButton, { opacity: areAllInputsFilled() ? 1 : 0.5 }]}
-  >
-    <TouchableOpacity
-      onPress={() => {
-        if (areAllInputsFilled()) {
-            navigation.navigate('myEmail')
-        }
-      }}
-      disabled={!areAllInputsFilled()}
-    >
-      <Text style={[styles.gradientText, { color: areAllInputsFilled() ? '#FFFFFF' : '#505050' }]}>
-        Continuar
-      </Text>
-    </TouchableOpacity>
-  </LinearGradient>
-</View>
-
-
+      <View style={styles.buttonContainer}>
+        <LinearGradient
+          colors={areAllInputsFilled() ?  ['#E73D76', '#FF3235'] : ['#d5d5d5', '#d5d5d5']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={[styles.gradientButton, { opacity: areAllInputsFilled() ? 1 : 0.5 }]}
+        >
+          <TouchableOpacity
+            onPress={() => {
+              if (areAllInputsFilled()) {
+                navigation.navigate('myEmail')
+              }
+            }}
+            disabled={!areAllInputsFilled()}
+          >
+            <Text style={[styles.gradientText, { color: areAllInputsFilled() ? '#FFFFFF' : '#505050' }]}>
+              Continue
+            </Text>
+          </TouchableOpacity>
+        </LinearGradient>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles= StyleSheet.create({
-   container: {
+  container: {
     flex: 1,
   },
   mainText: {

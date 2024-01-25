@@ -20,28 +20,26 @@ function Recovery({ navigation, route }) {
     return null;
   }
 
-
-
   return (
     <SafeAreaView style={styles.container}>
 
-    <View style={styles.headerContaienr}>
-      <Text style={styles.headerText}>Recuperação de conta</Text>
-    </View>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>Account Recovery</Text>
+      </View>
 
-    <View style={styles.mainContainer}>
-      <Text style={styles.mainText}>Mudou seu número de telefone ou perdeu acesso à sua conta do Google? Podemos ajudá-lo a entrar com o seu e-mail.</Text>
-    </View>
+      <View style={styles.mainContainer}>
+        <Text style={styles.mainText}>Changed your phone number or lost access to your Google account? We can help you log in with your email.</Text>
+      </View>
 
-     <View style={styles.buttonContainer}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('sendEmail')}>
-            <LinearGradient
-        colors={['#E73D76', '#FF3235']}
-        style={styles.button}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-            <Text style={styles.buttonText}>Entrar com e-mail</Text>
+          <LinearGradient
+            colors={['#E73D76', '#FF3235']}
+            style={styles.button}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <Text style={styles.buttonText}>Log in with email</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  headerContaienr: {
+  headerContainer: {
     marginTop: 105,
   },
   headerText: {
@@ -67,12 +65,12 @@ const styles = StyleSheet.create({
     marginTop: 35,
   },
   mainText: {
-     fontSize: 16.5,
-     color: '#404040',
-     textAlign: 'center',
-     width: 260,
+    fontSize: 16.5,
+    color: '#404040',
+    textAlign: 'center',
+    width: 260,
   },
-    buttonContainer: {
+  buttonContainer: {
     position: 'absolute',
     top: 360,
   },

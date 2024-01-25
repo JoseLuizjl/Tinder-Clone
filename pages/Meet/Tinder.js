@@ -4,12 +4,11 @@ import ImagePicker from 'react-native-image-picker';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
-function Tinder({navigation}) {
+function Tinder({ navigation }) {
   const [randomImage, setRandomImage] = useState(null);
   const [heartVisible, setHeartVisible] = useState(false);
   const [tutorialVisible, setTutorialVisible] = useState(true);
   const fadeAnim = useRef(new Animated.Value(0)).current;
-
 
   useEffect(() => {
     getRandomImage();
@@ -22,7 +21,7 @@ function Tinder({navigation}) {
         const randomPerson = data.results[0];
         setRandomImage(randomPerson.picture.large);
         setHeartVisible(false);
-      })
+      });
   };
 
   const showHeart = () => {
@@ -47,20 +46,20 @@ function Tinder({navigation}) {
       {tutorialVisible && (
         <View style={styles.tutorialOverlay}>
           <Text style={styles.handShake}>👋</Text>
-          <Text style={styles.tutorialText1}>Vamos te preparar!</Text>
-          <Text style={styles.tutorialText2}>Aqui está tudo que você precisa saber</Text>
-              <TouchableOpacity style={styles.button} onPress={(skipTutorial)}>
-          <LinearGradient
-        colors={['#E73D76', '#FF3235']}
-        style={styles.button}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-            <Text style={styles.buttonText}>COMEÇAR TUTORIAL</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+          <Text style={styles.tutorialText1}>Let's get you ready!</Text>
+          <Text style={styles.tutorialText2}>Here's everything you need to know</Text>
+          <TouchableOpacity style={styles.button} onPress={skipTutorial}>
+            <LinearGradient
+              colors={['#E73D76', '#FF3235']}
+              style={styles.button}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+            >
+              <Text style={styles.buttonText}>START TUTORIAL</Text>
+            </LinearGradient>
+          </TouchableOpacity>
           <TouchableOpacity onPress={skipTutorial} style={styles.tutorialButton}>
-            <Text style={{color: '#fff', fontSize: 18,  fontWeight: 'bold'}}>Pular</Text>
+            <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Skip</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -157,7 +156,7 @@ function Tinder({navigation}) {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -237,7 +236,7 @@ const styles = StyleSheet.create({
     height: 43,
     zIndex: 4,
   },
-  buttonStar:{
+  buttonStar: {
     borderWidth: 2,
     borderColor: '#34c7f4',
     width: 43,
@@ -297,7 +296,7 @@ const styles = StyleSheet.create({
     zIndex: 6,
   },
   arrowUp: {
-     width: 30,
+    width: 30,
     height: 30,
   },
   containerBlack: {
@@ -327,14 +326,14 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     width: 40,
-    height: 40, 
+    height: 40,
     top: 1.5,
     position: 'absolute',
     left: 42,
   },
   starIcon: {
     width: 40,
-    height: 40, 
+    height: 40,
     marginBottom: 4,
   },
   chatIcon: {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, SafeAreaView, TextInput ,Image } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, SafeAreaView, TextInput, Image } from 'react-native';
 import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -14,7 +14,7 @@ function Rules({ navigation, route }) {
 
   useEffect(() => {
     const isInputValid = schoolName.trim() !== '';
-    
+
     setButtonEnabled(isInputValid);
   }, [schoolName]);
 
@@ -26,47 +26,46 @@ function Rules({ navigation, route }) {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.logoContainer}>
-     <Image style={styles.logo} source={require('../../assets/tinderIcon.png')} alt="Logo" />
-    <Text style={styles.userText}>Bem vindo ao Tinder</Text>
-    </View>
+        <Image style={styles.logo} source={require('../../assets/tinderIcon.png')} alt="Logo" />
+        <Text style={styles.userText}>Welcome to Tinder</Text>
+      </View>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.infoText}>Por favor siga estas regras da casa</Text>
+        <Text style={styles.infoText}>Please follow these house rules</Text>
       </View>
-
 
       <View style={styles.rulesContainer}>
-      <View style={styles.checkTitle}>
-        <Ionicons name="checkmark-outline" style={styles.checkIcon} />
-          <Text style={styles.ruleTitle}>Seja você mesmo</Text>
-        </View>
-        <Text style={styles.textRule}>Certifique-se de que suas fotos, idade e biografia sejam fiéis a quem você é.</Text>
-          <View style={styles.checkTitle}>
-        <Ionicons name="checkmark-outline" style={styles.checkIcon} />
-          <Text style={styles.ruleTitle}>Fique seguro</Text>
-        </View>
-        <Text style={styles.textRule}>Não se precipite em fornecer informações pessoais. <Text style={{borderBottomWidth: 2, borderColor: '#a0a0a0'}}>Dados Seguros.</Text></Text>
         <View style={styles.checkTitle}>
-        <Ionicons name="checkmark-outline" style={styles.checkIcon} />
-          <Text style={styles.ruleTitle}>Mantenha a calma</Text>
+          <Ionicons name="checkmark-outline" style={styles.checkIcon} />
+          <Text style={styles.ruleTitle}>Be yourself</Text>
         </View>
-        <Text style={styles.textRule} >Respeite os outros e trate-os como gostaria de ser tratado.</Text>
-         <View style={styles.checkTitle}>
-        <Ionicons name="checkmark-outline" style={styles.checkIcon} />
-          <Text style={styles.ruleTitle}>Seja proativo</Text>
+        <Text style={styles.textRule}>Make sure your photos, age, and biography reflect who you truly are.</Text>
+        <View style={styles.checkTitle}>
+          <Ionicons name="checkmark-outline" style={styles.checkIcon} />
+          <Text style={styles.ruleTitle}>Stay safe</Text>
         </View>
-        <Text style={styles.textRule}>Sempre denuncie maus comportamentos.</Text>
+        <Text style={styles.textRule}>Don't rush to provide personal information. <Text style={{ borderBottomWidth: 2, borderColor: '#a0a0a0' }}>Secure Data.</Text></Text>
+        <View style={styles.checkTitle}>
+          <Ionicons name="checkmark-outline" style={styles.checkIcon} />
+          <Text style={styles.ruleTitle}>Keep it cool</Text>
+        </View>
+        <Text style={styles.textRule} >Respect others and treat them how you'd like to be treated.</Text>
+        <View style={styles.checkTitle}>
+          <Ionicons name="checkmark-outline" style={styles.checkIcon} />
+          <Text style={styles.ruleTitle}>Be proactive</Text>
+        </View>
+        <Text style={styles.textRule}>Always report inappropriate behavior.</Text>
       </View>
 
-            <View style={styles.buttonContainer}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Tinder')}>
           <LinearGradient
-        colors={['#E73D76', '#FF3235']}
-        style={styles.button}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-            <Text style={styles.buttonText}>EU CONCORDO</Text>
+            colors={['#E73D76', '#FF3235']}
+            style={styles.button}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <Text style={styles.buttonText}>I AGREE</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     color: '#888c99',
     marginLeft: 10,
     fontWeight: '500',
-    
+
   },
   buttonContainer: {
     position: 'absolute',

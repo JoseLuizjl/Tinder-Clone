@@ -31,7 +31,7 @@ function UserPhoto({ navigation }) {
             </TouchableOpacity>
             <View style={styles.cameraContainer}>
               <TouchableOpacity style={styles.cameraButton}>
-                <View style={styles.iconConatinerCamera}>
+                <View style={styles.iconContainerCamera}>
                   <Image
                     style={styles.cameraIcon}
                     source={require('../../assets/camera.png')}
@@ -42,13 +42,13 @@ function UserPhoto({ navigation }) {
               <TouchableOpacity
                 style={styles.galleryButton}
                 onPress={() => handleItemClick('gallery')}>
-                <View style={styles.iconConatinerGallery}>
+                <View style={styles.iconContainerGallery}>
                   <Image
                     style={styles.galleryIcon}
                     source={require('../../assets/gallery.png')}
                   />
                 </View>
-                <Text style={styles.galleryText}>Galeria</Text>
+                <Text style={styles.galleryText}>Gallery</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -61,7 +61,7 @@ function UserPhoto({ navigation }) {
             </TouchableOpacity>
             <View style={styles.btnGalleryInside}>
               <TouchableOpacity style={styles.galleryInBtn}>
-                <Text>Fotos</Text>
+                <Text>Photos</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.galleryInBtn}>
                 <Text style={styles.galleryInText}>Album</Text>
@@ -74,18 +74,18 @@ function UserPhoto({ navigation }) {
                 color: '#808080',
                 textAlign: 'center',
               }}>
-              Sua galeria está vazia
+              Your gallery is empty
             </Text>
           </View>
         );
       default:
         return (
           <View style={styles.container}>
-            <Text style={styles.userText}>Adicionar Fotos</Text>
+            <Text style={styles.userText}>Add Photos</Text>
 
             <View style={styles.infoContainer}>
               <Text style={styles.infoText}>
-                Adicione pelo menos 2 fotos para continuar
+                Add at least 2 photos to continue
               </Text>
             </View>
             <View style={styles.header}>
@@ -144,7 +144,7 @@ function UserPhoto({ navigation }) {
                   style={styles.button}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}>
-                  <Text style={styles.buttonText}>CONTINUAR</Text>
+                  <Text style={styles.buttonText}>CONTINUE</Text>
                 </LinearGradient>
               </TouchableOpacity>
             </View>
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
   },
-  iconConatinerCamera: {
+  iconContainerCamera: {
     backgroundColor: '#d5d5d5',
     height: 45,
     width: 50,
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
   },
-  iconConatinerGallery: {
+  iconContainerGallery: {
     backgroundColor: '#d5d5d5',
     height: 45,
     width: 50,

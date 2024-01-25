@@ -14,13 +14,16 @@ function MyEmail({ navigation, route }) {
     return null;
   }
 
+  // Function to validate the email format
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
 
+  // Check if the button should be disabled
   const isButtonDisabled = !email || !validateEmail(email);
 
+  // Handle the continue button press
   const handleContinue = () => {
     if (!isButtonDisabled) {
       navigation.navigate('myName');
@@ -29,12 +32,12 @@ function MyEmail({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.emailText}>Meu{'\n'}email é</Text>
+      <Text style={styles.emailText}>My{'\n'}email is</Text>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Endereço de email"
+          placeholder="Email address"
           placeholderTextColor="#a0a0a0"
           value={email}
           onChangeText={(text) => setEmail(text)}

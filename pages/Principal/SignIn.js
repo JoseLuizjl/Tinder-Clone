@@ -24,28 +24,28 @@ function SignIn({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.LogoContainer}>
+      <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/tinderIcon.png')}
-          style={styles.Logo}
+          style={styles.logo}
         />
       </View>
 
-      <View style={styles.containerText}>
-        <Text style={styles.Text}>
-          Não conseguimos encontrar uma conta do Tinder conectada a essa conta do {keyText}
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>
+          We couldn't find a Tinder account connected to this {keyText} account
         </Text>
       </View>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('phoneNumber')}>
           <LinearGradient
-        colors={['#E73D76', '#FF3235']}
-        style={styles.button}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-      >
-            <Text style={styles.buttonText}>CRIAR NOVA CONTA</Text>
+            colors={['#E73D76', '#FF3235']}
+            style={styles.button}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <Text style={styles.buttonText}>CREATE NEW ACCOUNT</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
@@ -59,15 +59,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  LogoContainer: {
+  logoContainer: {
     marginTop: 40,
     alignItems: 'center',
   },
-  containerText: {
+  textContainer: {
     marginTop: 45,
-
   },
-  Text: {
+  text: {
     fontWeight: '500',
     fontFamily: 'GothamRoundedBook',
     fontSize: 18,

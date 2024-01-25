@@ -17,7 +17,6 @@ function SendEmail({ navigation, route }) {
     GothamRoundedBook: require('../../assets/fonts/GothamRounded-Book.otf'),
   });
 
-
   const [userEmail, setUserEmail] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
 
@@ -25,7 +24,7 @@ function SendEmail({ navigation, route }) {
     return null;
   }
 
-   const validateEmail = (email) => {
+  const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
@@ -38,33 +37,32 @@ function SendEmail({ navigation, route }) {
     }
   };
 
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.headerContaienr}>
-        <Text style={styles.headerText}>Entrar via e-mail</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>Log in via email</Text>
       </View>
 
       <View style={styles.inputContainer}>
-         <TextInput
+        <TextInput
           style={[
             styles.inputEmail,
             !isValidEmail && styles.inputError,
           ]}
-          placeholder="Digite seu e-mail"
+          placeholder="Enter your email"
           placeholderTextColor="#505050"
           onChangeText={(text) => {
             setUserEmail(text);
-            setIsValidEmail(true); 
+            setIsValidEmail(true);
           }}
         />
         {!isValidEmail && (
-          <Text style={styles.errorMessage}>Digite um email válido</Text>
+          <Text style={styles.errorMessage}>Enter a valid email</Text>
         )}
       </View>
 
       <View style={styles.mainContainer}>
-        <Text style={styles.mainText}>Enviaremos um link por e-mail que permitirá o login instantâneo</Text>
+        <Text style={styles.mainText}>We will send a link by email that will allow instant login</Text>
       </View>
 
       <View style={styles.buttonContainer}>
@@ -75,7 +73,7 @@ function SendEmail({ navigation, route }) {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
           >
-            <Text style={styles.buttonText}>Enviar e-mail</Text>
+            <Text style={styles.buttonText}>Send Email</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
@@ -88,9 +86,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  headerContaienr: {
-      marginTop: 55,
-      right: 40,
+  headerContainer: {
+    marginTop: 55,
+    right: 40,
   },
   headerText: {
     fontWeight: 'bold',
@@ -101,10 +99,10 @@ const styles = StyleSheet.create({
     right: 35,
   },
   mainText: {
-     fontSize: 13,
-     color: '#404040',
-     textAlign: 'left',
-     width: 200,
+    fontSize: 13,
+    color: '#404040',
+    textAlign: 'left',
+    width: 200,
   },
   inputContainer: {
     marginTop: 25,
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     width: 250,
     borderColor: '#f28561',
-  },  
+  },
   buttonContainer: {
     position: 'absolute',
     top: 230,
@@ -133,7 +131,7 @@ const styles = StyleSheet.create({
     fontFamily: 'GothamRoundedBook',
   },
   inputError: {
-    borderColor: 'red', 
+    borderColor: 'red',
   },
   errorMessage: {
     color: 'red',

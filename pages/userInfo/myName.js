@@ -10,11 +10,10 @@ function MyName({ navigation, route }) {
 
   const [userName, setUserName] = useState('');
   const [buttonEnabled, setButtonEnabled] = useState(false);
-  
 
   useEffect(() => {
     const isInputValid = userName.trim() !== '';
-    
+
     setButtonEnabled(isInputValid);
   }, [userName]);
 
@@ -24,20 +23,19 @@ function MyName({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.userText}>Meu{'\n'}nome é</Text>
+      <Text style={styles.userText}>My{'\n'}name is</Text>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Nome"
+          placeholder="Name"
           placeholderTextColor="#a0a0a0"
           onChangeText={(text) => setUserName(text)}
         />
       </View>
 
-
       <View style={styles.infoContainer}>
-        <Text style={styles.infoText}>É assim que aparecerá no Tinder e você não poderá alterá-lo</Text>
+        <Text style={styles.infoText}>This is how it will appear on Tinder and you won't be able to change it</Text>
       </View>
 
       <View style={styles.buttonContainer}>
@@ -48,10 +46,10 @@ function MyName({ navigation, route }) {
               navigation.navigate('myBirthday', { userName });
             }
           }}
-          disabled={!buttonEnabled} 
+          disabled={!buttonEnabled}
         >
           <LinearGradient
-            colors={buttonEnabled ? ['#E73D76', '#FF3235'] : ['#d5d5d5', '#d5d5d5']} 
+            colors={buttonEnabled ? ['#E73D76', '#FF3235'] : ['#d5d5d5', '#d5d5d5']}
             style={styles.button}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}

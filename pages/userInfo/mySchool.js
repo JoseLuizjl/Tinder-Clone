@@ -23,25 +23,25 @@ function MySchool({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.userText}>Minha{'\n'}faculdade é</Text>
+      <Text style={styles.userText}>My{'\n'}school is</Text>
 
       <View  style={styles.skipContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('choice')}>
-          <Text style={styles.skipText}>Pular</Text>
+          <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Nome da escola"
+          placeholder="School name"
           placeholderTextColor="#a0a0a0"
           onChangeText={(text) => setSchoolName(text)}
         />
       </View>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.infoText}>É assim que aparecerá no Tinder e você não poderá alterá-lo</Text>
+        <Text style={styles.infoText}>This is how it will appear on Tinder and you won't be able to change it</Text>
       </View>
 
       <View style={styles.buttonContainer}>

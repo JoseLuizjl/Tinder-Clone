@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet, Text, TouchableOpacity } from 'react-nativ
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 
-const NumeroInput = ({navigation}) => {
+const NumberInput = ({ navigation }) => {
   const day1Ref = useRef(null);
   const day2Ref = useRef(null);
   const month1Ref = useRef(null);
@@ -102,9 +102,9 @@ const NumeroInput = ({navigation}) => {
       setDay1('');
     }
 
-    checkButtonState(); 
+    checkButtonState();
   };
-  
+
   const checkButtonState = () => {
     const allFilled =
       day1 && day2 && month1 && month2 && year1 && year2 && year3 && year4;
@@ -122,7 +122,7 @@ const NumeroInput = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.userText}>Meu{'\n'}aniversário é</Text>
+      <Text style={styles.userText}>My{'\n'}birthday is</Text>
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -201,26 +201,25 @@ const NumeroInput = ({navigation}) => {
         />
       </View>
 
-
-    <View style={styles.buttonContainer}>
-      <TouchableOpacity
-        style={styles.button}
-        disabled={buttonDisabled}
-        onPress={() => {
-          navigation.navigate('mySchool');
-        }}
-      >
-        <LinearGradient
-          colors={buttonDisabled ? ['#d5d5d5', '#d5d5d5'] : ['#E73D76', '#FF3235']}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
           style={styles.button}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
+          disabled={buttonDisabled}
+          onPress={() => {
+            navigation.navigate('mySchool');
+          }}
         >
-          <Text style={[styles.buttonText, { color: buttonDisabled ? '#505050' : '#FFFFFF' }]}>
-            CONTINUE
-          </Text>
-        </LinearGradient>
-      </TouchableOpacity>
+          <LinearGradient
+            colors={buttonDisabled ? ['#d5d5d5', '#d5d5d5'] : ['#E73D76', '#FF3235']}
+            style={styles.button}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <Text style={[styles.buttonText, { color: buttonDisabled ? '#505050' : '#FFFFFF' }]}>
+              CONTINUE
+            </Text>
+          </LinearGradient>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -260,7 +259,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingTop: 10,
   },
-  buttonContainer:{
+  buttonContainer: {
     position: 'absolute',
     top: 270,
   },
@@ -271,14 +270,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 50,
   },
-  buttonClickable: {
-    backgroundColor: 'linear-gradient(to right, #4FACFE, #00F2FE)', 
-  },
-  buttonNotClickable: {
-    backgroundColor: '#C0C0C0', 
-  },
   buttonText: {
-    color: 'white', 
+    color: 'white',
     fontWeight: 'bold',
   },
   inputContainer: {
@@ -288,5 +281,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default NumeroInput;
-
+export default NumberInput;

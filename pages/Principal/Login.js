@@ -14,9 +14,7 @@ const HomeScreen = ({ navigation }) => {
   }
 
   return (
-    
-
-        <LinearGradient colors={['#FE7156','#FE6A56','#FE655C','#FF5F5F','#FC5864','#FF5066','#FF486C']} style={styles.container}>
+    <LinearGradient colors={['#FE7156','#FE6A56','#FE655C','#FF5F5F','#FC5864','#FF5066','#FF486C']} style={styles.container}>
 
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../../assets/logo.png')} alt="Logo" />
@@ -24,42 +22,42 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.infoContainer}>
-       <Text style={styles.infoText}>Ao tocar em entrar,você concorda com os nossos <Text style={styles.linkText}>Termos</Text>.Saiba como processamos seus dados em nossa <Text style={styles.linkText}>Política de Privacidade</Text> e <Text style={styles.linkText}>Política de Cookies</Text>.</Text>
-           </View>
+        <Text style={styles.infoText}>
+          By tapping Enter, you agree to our <Text style={styles.linkText}>Terms</Text>. Learn how we process your data in our <Text style={styles.linkText}>Privacy Policy</Text> and <Text style={styles.linkText}>Cookie Policy</Text>.
+        </Text>
+      </View>
 
       <View style={styles.btnContainer}>
 
-      <TouchableOpacity onPress={() => navigation.navigate('SignIn', {keyText: "Google"})}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn', { keyText: "Google" })}>
           <View style={styles.loginContainer}>
-              <Image style={styles.googleIcon} source={require('../../assets/googleIcon.png')} alt="Logo" />
-              <Text style={styles.googleText}>ENTRAR COM O GOOGLE</Text>
+            <Image style={styles.googleIcon} source={require('../../assets/googleIcon.png')} alt="Logo" />
+            <Text style={styles.googleText}>SIGN IN WITH GOOGLE</Text>
           </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate('SignIn', {keyText: "Facebook"})}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn', { keyText: "Facebook" })}>
           <View style={styles.loginContainer}>
-              <Image style={styles.googleIcon} source={require('../../assets/facebookIcon.png')} alt="Logo" />
-              <Text style={styles.googleText}>ENTRAR COM O FACEBOOK</Text>
+            <Image style={styles.googleIcon} source={require('../../assets/facebookIcon.png')} alt="Logo" />
+            <Text style={styles.googleText}>SIGN IN WITH FACEBOOK</Text>
           </View>
-      </TouchableOpacity>
-      
-      <TouchableOpacity onPress={() => navigation.navigate('phoneNumber')}>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('phoneNumber')}>
           <View style={styles.loginContainer}>
-              <Image style={styles.googleIcon} source={require('../../assets/chatIcon.png')} alt="Logo" />
-              <Text style={styles.googleText}>ENTRAR COM O TELEFONE</Text>
+            <Image style={styles.googleIcon} source={require('../../assets/chatIcon.png')} alt="Logo" />
+            <Text style={styles.googleText}>SIGN IN WITH PHONE</Text>
           </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate('recovery')}>
-          <Text style={styles.problem}>Problemas para fazer o login? </Text>
-      </TouchableOpacity>
-
+        <View style={styles.forgotView}>
+          <TouchableOpacity onPress={() => navigation.navigate('recovery')}>
+            <Text style={styles.problem}>Forgot your email?</Text>
+          </TouchableOpacity>
+        </View>
 
       </View>
-
-      
- 
-        </LinearGradient>
+    </LinearGradient>
   );
 };
 
@@ -98,10 +96,10 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     textAlign: 'center',
   },
- btnContainer: {
+  btnContainer: {
     position: 'absolute',
     bottom: 65,
-    left: 30,
+    left: 40,
   },
   loginContainer: {
     backgroundColor: '#fff',
@@ -132,11 +130,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     fontWeight: '500',
+  },
+  forgotView: {
     position: 'absolute',
     bottom: -38,
-    marginLeft: 7,
+    left: 50,
   },
-    linkText: {
+  linkText: {
     textDecorationLine: 'underline', 
     fontWeight: 'bold',
   },
